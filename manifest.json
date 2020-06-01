@@ -1,0 +1,28 @@
+ {
+    "name": "Spotify Selection Launcher",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Launch Spotify tracks from text selection !",
+    "permissions": [
+        "contextMenus","declarativeContent", "tabs"
+      ],
+    "background": {
+        "scripts": ["spotify-launcher.js"]
+     },
+    "browser_action": {
+      "default_icon": {
+        "19": "assets/icon.png",
+        "38": "assets/icon.png",
+        "48": "assets/icon.png",
+        "128": "assets/icon.png"
+      },
+      "default_popup": "info.html"
+    },
+    "icons": {
+      "19": "assets/icon.png",
+      "38": "assets/icon.png",
+      "48": "assets/icon.png",
+      "128": "assets/icon.png"
+    }
+    
+  }
