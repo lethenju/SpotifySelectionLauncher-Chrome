@@ -23,10 +23,6 @@ SOFTWARE.
 */
 let spotify_tab_id;
 
-function store_tab_id(tab) {
-  spotify_tab_id = tab.id;
-}
-
 chrome.contextMenus.create({
   title: "Play '%s' on Spotify", 
   contexts:["selection"], 
@@ -35,7 +31,7 @@ chrome.contextMenus.create({
     if (typeof spotify_tab_id !== 'undefined') {
       chrome.tabs.update(spotify_tab_id, {url, active:true});
     } else {
-      chrome.tabs.create({url}, store_tab_id);
+      chrome.tabs.create({url}, (tab) => {spotify_tab_id = tab.id;});
     }
   }   
 });
